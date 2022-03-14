@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Grow, Typography } from '@material-ui/core';
-
+import Masonry from 'react-masonry-css';
 import NewsCard from './NewsCard/NewsCard';
 import useStyles from './styles.js';
 
@@ -9,25 +9,31 @@ const infoCards = [
   {
     color: '#1565c0',
     title: 'News by Categories',
-    info: 'Business, Entertainment, Science, Sports, Technology',
+    info: 'Business, Sports, Technology',
     text: 'Give me the latest Technology news',
   },
   {
     color: '#4527a0',
     title: 'News by Terms',
-    info: 'Bitcoin, PlayStation 5, Smartphones, Donald Trump...',
-    text: "What's up with PlayStation 5",
+    info: 'Bitcoin, Smartphones, Covid-19...',
+    text: "What's up with Smartphones",
   },
   {
     color: '#283593',
     title: 'News by Sources',
-    info: 'CNN, BBC News, The Punch, Vanguard, ABC News...',
+    info: 'CNN, BBC News, The Punch, ABC News...',
     text: 'Give me the news from CNN',
   },
 ];
 
 const NewsCards = ({ articles, activeArticle }) => {
   const classes = useStyles();
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
 
   if (!articles.length) {
     return (

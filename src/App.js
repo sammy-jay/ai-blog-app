@@ -75,10 +75,11 @@ const App = () => {
       {!newsArticles.length ? (
         <div className={classes.footer}>
           <Typography variant="body1" component="h2">
-            Created by
+            <span style={{ color: '#fff' }}>Created by</span>
             <a
               className={classes.link}
-              href="https://www.linkedin.com/in/tolulope-soneye/"
+              href="https://www.linkedin.com/in/tolulope-soneye-5526a51b7"
+              target="_blank"
             >
               {' '}
               Tolulope Soneye
